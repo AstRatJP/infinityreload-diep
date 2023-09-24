@@ -40,6 +40,16 @@ class Polygon {
         this.deg += Math.PI / this.ω;
         this.x2 = this.x + scroolX + centerX - 500;
         this.y2 = this.y + scroolY + centerY - 500;
+
+        for (let i = 0; i < polygons.length; i++) {
+            const checked = checkCollision(this.x2, this.y2, this.size, polygons[i].x2, polygons[i].y2, polygons[i].size);
+            if (checked.check&&checked.dx>0) {
+                this.vx -= checked.dx*8000 / (this.size**2);
+                this.vy -= checked.dy*8000 / (this.size**2);
+                polygons[i].vx += checked.dx*8000 / (polygons[i].size**2);
+                polygons[i].vy += checked.dy*8000 / (polygons[i].size**2);
+            }
+        }
     }
     draw() {
         ctx.beginPath();
@@ -353,9 +363,3 @@ function mainloop() {
 }
 
 mainloop();
-
-
-
-
-
-

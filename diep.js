@@ -45,7 +45,7 @@ class Polygon {
                 this.size = 54 / 1.25;
                 break;
         }
-        this.damage = 1;
+        this.damage = 2;
         this.maxHealth = this.health;
     }
     update() {
@@ -119,7 +119,7 @@ class Basic {
         this.damaged = false;
         this.alpha = 1;
         this.health = 100;
-        this.damage = 1;
+        this.damage = 2;
         this.maxHealth = this.health;
     }
     update() {
@@ -220,7 +220,7 @@ class Bullet {
         this.disappear = 180;
         this.damaged = false;
         this.alpha = 1;
-        this.health = 10;
+        this.health = 20;
         this.damage = 2;
         this.maxHealth = this.health;
     }
@@ -481,4 +481,3 @@ function mainloop() {
 }
 
 mainloop();
-

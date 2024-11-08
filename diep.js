@@ -12,7 +12,7 @@ let mouseY = 0;
 let keys = {};
 let mouseDown = false;
 const basicReload = 0;
-const shapeCount = 16;
+const shapeCount = 150;
 
 let polygons = [];
 let bullets = [];
